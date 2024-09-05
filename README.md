@@ -1,3 +1,3 @@
 # Taller Algoritmos de Cadenas en C
-  - Plataforma: Windows
+  - Plataforma: Windows, Linux
   - Editor: CLion
