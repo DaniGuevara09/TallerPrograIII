@@ -1,10 +1,6 @@
-/var/lib/snapd/snap/clion/291/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/var/lib/snapd/snap/clion/291/bin/ninja/linux/x64/ninja -G Ninja -S /home/dani/Documents/Uni/ProgrammingIII/Workshop -B /home/dani/Documents/Uni/ProgrammingIII/Workshop/cmake-build-debug
--- The C compiler identification is GNU 14.2.1
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Configuring done (0.3s)
--- Generating done (0.0s)
--- Build files have been written to: /home/dani/Documents/Uni/ProgrammingIII/Workshop/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2023.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Admin\Desktop\RepoFront\TallerPrograIII -B C:\Users\Admin\Desktop\RepoFront\TallerPrograIII\cmake-build-debug
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.29 or higher is required.  You are running version 3.26.4
+
+
+-- Configuring incomplete, errors occurred!
