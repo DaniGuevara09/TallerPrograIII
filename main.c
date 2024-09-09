@@ -13,29 +13,29 @@ int main(void) {
 }
 
 void FormatNumber() {
-    double numero;
-    char resultado[MAX_LENGTH];
+    double number;
+    char result[MAX_LENGTH];
 
-    printf("Digite un numero: ");
-    scanf("%lf", &numero);
+    printf("Enter a number: ");
+    scanf("%lf", &number);
 
-    Formatear(numero, resultado, sizeof(resultado));
+    Format(number, result, sizeof(result));
 
-    printf("Numero formateado: %s\n", resultado);
+    printf("Formatted number: %s\n", result);
     getchar();
 }
 
-void Palindromo() {
+void Palindrome() {
     char cadena[MAX_LENGTH];
 
-    printf("Digite una cadena: ");
+    printf("Enter a character string: ");
     fgets(cadena, sizeof(cadena), stdin);
     cadena[strcspn(cadena, "\n")] = '\0';
 
     if (isPalindrome(cadena)) {
-        printf("La cadena es un palíndromo.\n");
+        printf("The string is a palindrome.\n");
     } else {
-        printf("La cadena no es un palíndromo.\n");
+        printf("The string is not a palindrome.\n");
     }
 
     getchar();
@@ -43,11 +43,11 @@ void Palindromo() {
 
 void mainMenu(){
     char option;
-    char *menu = "<<<<<<<MENU PRINCIPAL>>>>>>\n\n"
-                 "6. Formatear un valor numerico.\n"
-                 "7. Comprobar si una cadena es un palindromo.\n\n"
-                 "X. Salir\n\n"
-                 "Digite su Opcion: ";
+    char *menu = "<<<<<<<MAIN MENUL>>>>>>\n\n"
+                 "6. Format a number.\n"
+                 "7. Check if a string is an palindrome.\n\n"
+                 "X. Exit\n\n"
+                 "Please, select an option: ";
 
     do{
         printf( menu);
@@ -56,7 +56,7 @@ void mainMenu(){
         switch(option){
             case '6' : FormatNumber();
                 break;
-            case '7' : Palindromo();
+            case '7' : Palindrome();
                 break;
         }
     }while( toupper(option) != 'X');
