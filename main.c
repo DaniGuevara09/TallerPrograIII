@@ -43,7 +43,7 @@ void Palindrome() {
 
 void mainMenu(){
     char option;
-    char *menu = "<<<<<<<MAIN MENUL>>>>>>\n\n"
+    char *menu = "<<<<<<<MAIN MENU>>>>>>\n\n"
                  "6. Format a number.\n"
                  "7. Check if a string is an palindrome.\n\n"
                  "X. Exit\n\n"
