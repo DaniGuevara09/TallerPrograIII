@@ -1,3 +1,0 @@
-/home/dani/Documents/Uni/ProgrammingIII/Workshop1/TallerPrograIII/cmake-build-debug/CMakeFiles/Workshop.dir
-/home/dani/Documents/Uni/ProgrammingIII/Workshop1/TallerPrograIII/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dani/Documents/Uni/ProgrammingIII/Workshop1/TallerPrograIII/cmake-build-debug/CMakeFiles/rebuild_cache.dir
