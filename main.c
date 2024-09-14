@@ -12,7 +12,7 @@ int main(void) {
     return 0;
 }
 
-void FormatNumber() {
+void formatNumber() {
     double number;
     char result[MAX_LENGTH];
 
@@ -25,7 +25,8 @@ void FormatNumber() {
     getchar();
 }
 
-void Palindrome() {
+void palindrome() {
+    getchar();
     char cadena[MAX_LENGTH];
 
     printf("Enter a character string: ");
@@ -37,8 +38,6 @@ void Palindrome() {
     } else {
         printf("The string is not a palindrome.\n");
     }
-
-    getchar();
 }
 
 void removeFinal(char *str) {
@@ -98,9 +97,9 @@ void mainMenu(){
         switch(option){
             case '1' : posSubstring();
                 break;
-            case '6' : FormatNumber();
+            case '6' : formatNumber();
                 break;
-            case '7' : Palindrome();
+            case '7' : palindrome();
                 break;
         }
     }while( toupper(option) != 'X');
