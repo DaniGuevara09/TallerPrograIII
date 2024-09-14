@@ -40,6 +40,20 @@ void palindrome() {
     }
 }
 
+/**
+ * @brief Removes the newline character '\n' from the end of a string.
+ *
+ * This function searches for the first occurrence of the newline character ('\n') in the given string
+ * and replaces it with the null character ('\0'), effectively removing the trailing newline.
+ *
+ * @param str Pointer to the string to be modified.
+ *
+ * @return void
+ *
+ * @example
+ * // Input: "Hello world\n"
+ * // After calling removeFinal: "Hello world"
+ */
 void removeFinal(char *str) {
     char *pos;
     if ((pos = strchr(str, '\n')) != NULL) {
@@ -47,6 +61,30 @@ void removeFinal(char *str) {
     }
 }
 
+/**
+ * @brief Finds the position of the last occurrence of a substring within a string.
+ *
+ * This function prompts the user to enter a main string and a substring. It then searches
+ * for the last occurrence of the substring within the main string. If the substring is found,
+ * it prints the position of the first character of the last occurrence. If the substring is not found,
+ * the position returned is the initial position (0).
+ *
+ * @note Requires an external function `removeFinal` to remove unwanted trailing characters
+ *       from both strings.
+ *
+ * @param None
+ *
+ * @return void
+ *
+ * @example
+ * // Input: "This is an example of example"
+ * // Substring: "example"
+ * // Output: 22 (indicates the position of the last occurrence of "example")
+ *
+ * // Input: "Hello world"
+ * // Substring: "goodbye"
+ * // Output: 0 (indicates that the substring was not found)
+ */
 void posSubstring() {
     getchar();
     char fullString [MAX_LENGTH];
@@ -81,6 +119,26 @@ void posSubstring() {
     printf("%d\n", pos);
 }
 
+/**
+ * @brief Validates if a string contains a balanced number of opening '(' and closing ')' parentheses.
+ *
+ * This function prompts the user to enter a string and then analyzes it to check if the
+ * number of opening parentheses matches the number of closing parentheses.
+ * If the string is balanced, the function prints 0; otherwise, it prints 1.
+ *
+ * @note Requires an external function `removeFinal` to remove unwanted trailing characters from the string.
+ *
+ * @param None
+ *
+ * @return void
+ *
+ * @example
+ * // Input: "(a + b) * (c + d)"
+ * // Output: 0 (indicates that the parentheses are balanced)
+ *
+ * // Input: "(a + b))"
+ * // Output: 1 (indicates that the parentheses are not balanced)
+ */
 void validateParentheses() {
     getchar();
 
