@@ -81,12 +81,38 @@ void posSubstring() {
     printf("%d\n", pos);
 }
 
+void validateParentheses() {
+    getchar();
+
+    char parentheses[MAX_LENGTH];
+    int cont = 0;
+
+    printf("Enter a string: ");
+    fgets(parentheses, sizeof(parentheses), stdin);
+    removeFinal(parentheses);
+
+    for (int i = 0; i < strlen(parentheses); i++) {
+        if (parentheses[i] == '(') {
+            cont++;
+        } else if (parentheses[i] == ')') {
+            cont--;
+        }
+    }
+
+    if (cont == 0) {
+        printf("%d\n", 0);
+    } else {
+        printf("%d\n", 1);
+    }
+}
+
 void mainMenu(){
     char option;
     char *menu = "\n<<<<<<<MAIN MENU>>>>>>\n\n"
                  "1. Find the last occurrence of a substring within another string.\n"
                  "6. Format a number.\n"
-                 "7. Check if a string is an palindrome.\n\n"
+                 "7. Check if a string is an palindrome.\n"
+                 "8. Validate parentheses.\n\n"
                  "X. Exit\n\n"
                  "Please, select an option: ";
 
@@ -100,6 +126,8 @@ void mainMenu(){
             case '6' : formatNumber();
                 break;
             case '7' : palindrome();
+                break;
+            case '8' : validateParentheses();
                 break;
         }
     }while( toupper(option) != 'X');
