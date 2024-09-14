@@ -4,3 +4,4 @@
 
 # Responsabilidades por integrante:
     - Nicolas Rojas: Formatear un número y verificar si una cadena de texto es un palíndromo.
+    - Laura Guevara:  Buscar la última ocurrencia de una subcadena dentro de otra y validar paréntesis.
