@@ -12,6 +12,19 @@ int main(void) {
     return 0;
 }
 
+/**
+ * @author Nicolas Rojas
+ *
+ * @brief Prompts the user to enter a number, formats it, and prints it.
+ *
+ * This function prompts the user to input a floating-point number (double),
+ * formats the number using the Format function, and then prints the formatted number.
+ *
+ * @param none No input parameters.
+ *
+ * @return void This function does not return any value.
+ *
+ */
 void formatNumber() {
     double number;
     char result[MAX_LENGTH];
@@ -24,6 +37,21 @@ void formatNumber() {
     printf("Formatted number: %s\n", result);
     getchar();
 }
+
+/**
+ * @author Nicolas Rojas
+ *
+ * @brief Checks if the entered string is a palindrome.
+ *
+ * This function prompts the user to input a string of characters,
+ * removes the newline character, and then uses the isPalindrome function
+ * to check if the string is a palindrome. It prints the result of the check.
+ *
+ * @param none No input parameters.
+ *
+ * @return void This function does not return any value.
+ *
+ */
 
 void palindrome() {
     getchar();
