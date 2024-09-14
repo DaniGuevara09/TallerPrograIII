@@ -41,9 +41,51 @@ void Palindrome() {
     getchar();
 }
 
+void removeFinal(char *str) {
+    char *pos;
+    if ((pos = strchr(str, '\n')) != NULL) {
+        *pos = '\0';
+    }
+}
+
+void posSubstring() {
+    getchar();
+    char fullString [MAX_LENGTH];
+    char substring [30];
+
+    printf("Enter a string: ");
+    fgets(fullString, sizeof(fullString), stdin);
+
+    printf("Enter a substring: ");
+    fgets(substring, sizeof(substring), stdin);
+
+    removeFinal(fullString);
+    removeFinal(substring);
+
+    int pos = 0;
+    int cant = 0;
+    int i = 0;
+
+    for (int j = 0; j < strlen(fullString); j++) {
+        if (substring[i] == fullString[j]) {
+            i++;
+            cant++;
+
+            if (i == strlen(substring)) {
+                i = 0;
+                cant = 0;
+                pos = (j - strlen(substring)) + 1;
+            }
+        }
+    }
+
+    printf("%d\n", pos);
+}
+
 void mainMenu(){
     char option;
-    char *menu = "<<<<<<<MAIN MENU>>>>>>\n\n"
+    char *menu = "\n<<<<<<<MAIN MENU>>>>>>\n\n"
+                 "1. Find the last occurrence of a substring within another string.\n"
                  "6. Format a number.\n"
                  "7. Check if a string is an palindrome.\n\n"
                  "X. Exit\n\n"
@@ -54,6 +96,8 @@ void mainMenu(){
         scanf("%c",&option);
         fflush(stdin);
         switch(option){
+            case '1' : posSubstring();
+                break;
             case '6' : FormatNumber();
                 break;
             case '7' : Palindrome();
