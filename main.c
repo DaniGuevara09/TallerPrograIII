@@ -245,34 +245,30 @@ void capitalizeString() {
  * frees this memory after use.
  */
 void splitString() {
-    char input[1000]; ///< Buffer to hold the input string. Adjust the size as needed.
+    char input[1000];
 
-    // Read a line of text from the standard input
     printf("Enter the text: ");
     fgets(input, sizeof(input), stdin);
 
-    // Remove the newline character if present
     size_t len = strlen(input);
     if (len > 0 && input[len - 1] == '\n') {
         input[len - 1] = '\0';
     }
 
-    // Count the number of words in the input string
-    int wordCount = 1; // Start with 1 as there's at least one word
+    int wordCount = 1;
     for (int i = 0; input[i] != '\0'; i++) {
         if (input[i] == ' ') {
             wordCount++;
         }
     }
 
-    // Allocate memory for the array of pointers to strings
+
     char** words = (char**)malloc(wordCount * sizeof(char*));
     if (words == NULL) {
         perror("Failed to allocate memory");
         exit(EXIT_FAILURE);
     }
 
-    // Copy words into the array
     int index = 0;
     char* temp = strdup(input);
     if (temp == NULL) {
@@ -290,14 +286,13 @@ void splitString() {
         token = strtok(NULL, " ");
     }
 
-    free(temp); // Free the temporary string buffer
+    free(temp);
 
-    // Print the split strings
     for (int i = 0; i < wordCount; i++) {
         printf("Word %d: %s\n", i + 1, words[i]);
         free(words[i]); // Free each string
     }
-    free(words); // Free the array of pointers
+    free(words);
 }
 
 void mainMenu(){
