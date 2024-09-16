@@ -4,8 +4,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-#define MAX_LENGTH 100
-
+#define MAX_LENGTH 400
 void mainMenu();
 
 int main(void) {
@@ -13,6 +12,114 @@ int main(void) {
     return 0;
 }
 
+
+
+
+/**
+ * @author Julian Arias
+ *
+ * @brief Replaces spaces in a user-provided string with a chosen separator.
+ *
+ * This function prompts the user to input a full string of text and a separator character.
+ * It replaces every space in the string with the separator provided by the user,
+ * avoiding a separator at the end of the resulting string. The resulting string is dynamically
+ * allocated and should be freed by the caller.
+ *
+ * @param none No input parameters.
+ *
+ * @return char* Returns a dynamically allocated string where spaces have been replaced
+ *         by the user-chosen separator. Returns NULL in case of memory allocation failure.
+ */
+
+
+
+char* joinStringsWithInput() {
+    char inputString[MAX_LENGTH];
+    char separator;
+    printf("Ingresa una cadena de texto completa: ");
+    fgets(inputString, sizeof(inputString), stdin);
+    inputString[strcspn(inputString, "\n")] = '\0';
+
+    printf("Ingresa un carácter separador: ");
+    scanf("%c", &separator);
+    getchar();
+
+
+    int totalLength = strlen(inputString);
+
+
+    char* result = (char*)malloc((totalLength + 1) * sizeof(char));
+    if (result == NULL) {
+        return NULL;
+    }
+
+    int j = 0;
+
+
+    for (int i = 0; i < totalLength; i++) {
+        if (inputString[i] == ' ') {
+            result[j++] = separator;
+        } else {
+            result[j++] = inputString[i];
+        }
+    }
+
+
+    if (result[j - 1] == separator) {
+        j--;
+    }
+
+    result[j] = '\0';
+
+    return result;
+}
+
+/**
+ * @author Julian Arias
+ * @brief Verifies if a string ends with a given substring.
+ *
+ * This function checks whether the main string ends with the provided substring.
+ *
+ * @param str The main string to be checked.
+ * @param substr The substring to verify if it matches the end of the main string.
+ *
+ * @return int Returns 0 if the string ends with the substring, otherwise returns 1.
+ */
+int endsWith(const char *str, const char *substr) {
+    int strLen = strlen(str);
+    int substrLen = strlen(substr);
+
+    // Si la subcadena es más larga que la cadena principal, no puede coincidir
+    if (substrLen > strLen) {
+        return 1; // No coincide
+    }
+
+    // Comparar desde el final de la cadena principal con la subcadena
+    if (strcmp(str + strLen - substrLen, substr) == 0) {
+        return 0; // Coincide
+    } else {
+        return 1; // No coincide
+    }
+}
+
+void checkEndsWith() {
+    char str[MAX_LENGTH];
+    char substr[MAX_LENGTH];
+
+    // Pedir la cadena principal
+    printf("Ingresa la cadena principal: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0'; // Eliminar el salto de línea
+
+    // Pedir la subcadena
+    printf("Ingresa la subcadena: ");
+    fgets(substr, sizeof(substr), stdin);
+    substr[strcspn(substr, "\n")] = '\0'; // Eliminar el salto de línea
+
+    // Verificar si la cadena termina con la subcadena
+    int result = endsWith(str, substr);
+    printf("Resultado: %d\n", result);
+}
 /**
  * @author Nicolas Rojas
  *
@@ -301,6 +408,8 @@ void mainMenu(){
                  "1. Find the last occurrence of a substring within another string.\n"
                  "2. Capitalize a text string.\n"
                  "3. Split a string into a character array.\n"
+                 "4. Join strings with a separator.\n"
+                 "5. Check if a string ends with another substring.\n"
                  "6. Format a number.\n"
                  "7. Check if a string is an palindrome.\n"
                  "8. Validate parentheses.\n\n"
@@ -318,6 +427,17 @@ void mainMenu(){
                 break;
             case '3' : splitString();
                 break;
+            case '4': {
+                char* result = joinStringsWithInput();
+                if (result != NULL) {
+                    printf("Cadena resultante: %s\n", result);
+                    free(result);
+                }
+                break;
+            }
+            case '5': checkEndsWith();
+            break;
+
             case '6' : formatNumber();
                 break;
             case '7' : palindrome();
