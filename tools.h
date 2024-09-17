@@ -21,7 +21,7 @@
  * @author Nicolas Rojas
  */
 
-void Format(double number, char *result, size_t size) {
+void format(double number, char *result, size_t size) {
     char buffer[100];
     int len, j = 0, k = 0;
     int decimalPos;

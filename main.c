@@ -12,9 +12,6 @@ int main(void) {
     return 0;
 }
 
-
-
-
 /**
  * @author Julian Arias
  *
@@ -31,9 +28,8 @@ int main(void) {
  *         by the user-chosen separator. Returns NULL in case of memory allocation failure.
  */
 
-
-
 char* joinStringsWithInput() {
+    getchar();
     char inputString[MAX_LENGTH];
     char separator;
     printf("Ingresa una cadena de texto completa: ");
@@ -103,6 +99,7 @@ int endsWith(const char *str, const char *substr) {
 }
 
 void checkEndsWith() {
+    getchar();
     char str[MAX_LENGTH];
     char substr[MAX_LENGTH];
 
@@ -120,6 +117,7 @@ void checkEndsWith() {
     int result = endsWith(str, substr);
     printf("Resultado: %d\n", result);
 }
+
 /**
  * @author Nicolas Rojas
  *
@@ -140,7 +138,7 @@ void formatNumber() {
     printf("Enter a number: ");
     scanf("%lf", &number);
 
-    Format(number, result, sizeof(result));
+    format(number, result, sizeof(result));
 
     printf("Formatted number: %s\n", result);
     getchar();
@@ -160,7 +158,6 @@ void formatNumber() {
  * @return void This function does not return any value.
  *
  */
-
 void palindrome() {
     getchar();
     char cadena[MAX_LENGTH];
@@ -198,6 +195,8 @@ void removeFinal(char *str) {
 }
 
 /**
+ * @author Laura Daniela Guevara
+ *
  * @brief Finds the position of the last occurrence of a substring within a string.
  *
  * This function prompts the user to enter a main string and a substring. It then searches
@@ -256,6 +255,8 @@ void posSubstring() {
 }
 
 /**
+ * @author Laura Daniela Guevara
+ *
  * @brief Validates if a string contains a balanced number of opening '(' and closing ')' parentheses.
  *
  * This function prompts the user to enter a string and then analyzes it to check if the
@@ -312,6 +313,7 @@ void validateParentheses() {
  * (e.g., spaces, punctuation). Single-character words are not capitalized.
  */
 void capitalizeString() {
+    getchar();
     char str[1000];
 
     printf("Enter the text: ");
@@ -352,6 +354,7 @@ void capitalizeString() {
  * frees this memory after use.
  */
 void splitString() {
+    getchar();
     char input[1000];
 
     printf("Enter the text: ");
