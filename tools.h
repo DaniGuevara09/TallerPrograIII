@@ -64,13 +64,13 @@ void format(double number, char *result, size_t max_len) {
  */
 
 int isPalindrome(const char *str) {
-    int left = 0, right = strlen(str) -1;
+    int left = 0, right = strlen(str) - 1;
 
     while (left < right) {
         while (left < right && !isalpha(str[left])) {
             left++;
         }
-        while (left< right && !isalpha(str[right])) {
+        while (left < right && !isalpha(str[right])) {
             right--;
         }
 
