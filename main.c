@@ -162,7 +162,6 @@ void formatNumber() {
  */
 
 void palindrome() {
-    getchar();
     char cadena[MAX_LENGTH];
 
     printf("Enter a character string: ");
@@ -174,6 +173,7 @@ void palindrome() {
     } else {
         printf("The string is not a palindrome.\n");
     }
+    getchar();
 }
 
 /**
