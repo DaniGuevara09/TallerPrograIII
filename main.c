@@ -143,7 +143,7 @@ void formatNumber() {
     format(number, result, sizeof(result));
 
     printf("Formatted number: %s\n", result);
-    getchar();
+    getchar();  // Capture the enter key
 }
 
 /**

@@ -1,6 +1,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_LENGTH 100
+
 /**
  * @brief Formats a given number into a currency format with commas and a dollar sign.
  *
@@ -21,51 +23,29 @@
  * @author Nicolas Rojas
  */
 
-void format(double number, char *result, size_t size) {
-    char buffer[100];
-    int len, j = 0, k = 0;
-    int decimalPos;
+void format(double number, char *result, size_t max_len) {
+    char temp[MAX_LENGTH];
+    char *ptr_decimal;
 
-    snprintf(buffer, sizeof(buffer), "%.2lf", number);
+    snprintf(temp, sizeof(temp), "%.2f", number);
+    ptr_decimal = strchr(temp, '.');
 
-    len = strlen(buffer);
-    decimalPos = strchr(buffer, '.') ? strchr(buffer, '.') - buffer : len;
+    int len = ptr_decimal - temp;
+    int count = 0;
 
-    if (buffer[decimalPos + 1] == '0' && buffer[decimalPos + 2] == '0') {
-        buffer[decimalPos] = '\0';
-    }
+    result[count++] = '$';
 
-    len = strlen(buffer);
-
-    if (size < len + 3) {
-        snprintf(result, size, "Buffer too short");
-        return;
-    }
-
-    result[j++] = '$';
-
-    for (int i = len - 1; i >= 0; i--) {
-        if (buffer[i] == '.') {
-            result[j++] = buffer[i];
-            k = 0;
-        } else {
-            if (k > 0 && k % 3 == 0 && i > 0 && buffer[i-1] != '.') {
-                result[j++] = '.';
-            }
-            result[j++] = buffer[i];
-            k++;
+    for (int i = 0; i < len; i++) {
+        result[count++] = temp[i];
+        if ((len - i - 1) % 3 == 0 && i != len - 1) {
+            result[count++] = '.';
         }
     }
-    result[j] = '\0';
 
-    int start = 1;
-    int end = j - 1;
-    while (start < end) {
-        char temp = result[start];
-        result[start] = result[end];
-        result[end] = temp;
-        start++;
-        end--;
+    if (strcmp(ptr_decimal, ".00") != 0) {
+        strcpy(result + count, ptr_decimal);
+    } else {
+        result[count] = '\0';
     }
 }
 
