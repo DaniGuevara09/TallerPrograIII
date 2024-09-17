@@ -12,6 +12,9 @@ int main(void) {
     return 0;
 }
 
+
+
+
 /**
  * @author Julian Arias
  *
@@ -28,8 +31,9 @@ int main(void) {
  *         by the user-chosen separator. Returns NULL in case of memory allocation failure.
  */
 
+
+
 char* joinStringsWithInput() {
-    getchar();
     char inputString[MAX_LENGTH];
     char separator;
     printf("Ingresa una cadena de texto completa: ");
@@ -99,7 +103,6 @@ int endsWith(const char *str, const char *substr) {
 }
 
 void checkEndsWith() {
-    getchar();
     char str[MAX_LENGTH];
     char substr[MAX_LENGTH];
 
@@ -117,7 +120,6 @@ void checkEndsWith() {
     int result = endsWith(str, substr);
     printf("Resultado: %d\n", result);
 }
-
 /**
  * @author Nicolas Rojas
  *
@@ -158,6 +160,7 @@ void formatNumber() {
  * @return void This function does not return any value.
  *
  */
+
 void palindrome() {
     char string[MAX_LENGTH];
 
@@ -170,6 +173,7 @@ void palindrome() {
     } else {
         printf("The string is not a palindrome.\n");
     }
+    getchar();
 }
 
 /**
@@ -312,7 +316,6 @@ void validateParentheses() {
  * (e.g., spaces, punctuation). Single-character words are not capitalized.
  */
 void capitalizeString() {
-    getchar();
     char str[1000];
 
     printf("Enter the text: ");
@@ -353,7 +356,6 @@ void capitalizeString() {
  * frees this memory after use.
  */
 void splitString() {
-    getchar();
     char input[1000];
 
     printf("Enter the text: ");
