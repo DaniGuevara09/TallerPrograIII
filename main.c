@@ -224,7 +224,6 @@ void removeFinal(char *str) {
  * // Output: 0 (indicates that the substring was not found)
  */
 void posSubstring() {
-    getchar();
     char fullString [MAX_LENGTH];
     char substring [30];
 
@@ -280,8 +279,6 @@ void posSubstring() {
  * // Output: 1 (indicates that the parentheses are not balanced)
  */
 void validateParentheses() {
-    getchar();
-
     char parentheses[MAX_LENGTH];
     int cont = 0;
 
