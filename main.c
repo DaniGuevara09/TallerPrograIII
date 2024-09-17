@@ -143,7 +143,7 @@ void formatNumber() {
     format(number, result, sizeof(result));
 
     printf("Formatted number: %s\n", result);
-    getchar();  // Capture the enter key
+    getchar();
 }
 
 /**
@@ -162,13 +162,13 @@ void formatNumber() {
  */
 
 void palindrome() {
-    char cadena[MAX_LENGTH];
+    char string[MAX_LENGTH];
 
     printf("Enter a character string: ");
-    fgets(cadena, sizeof(cadena), stdin);
-    cadena[strcspn(cadena, "\n")] = '\0';
+    fgets(string, sizeof(string), stdin);
+    string[strcspn(string, "\n")] = '\0';
 
-    if (isPalindrome(cadena)) {
+    if (isPalindrome(string)) {
         printf("The string is a palindrome.\n");
     } else {
         printf("The string is not a palindrome.\n");
